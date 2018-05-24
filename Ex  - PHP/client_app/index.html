@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calc</title>
+        <link rel="stylesheet" href="includes/css/myStyle.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript"></script>
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+ 
+
+    </head>
+    <body>
+        <div id="wrapper">
+            <section>
+                <h1>Y.H Services</h1>
+                <section id="decoder_box_1"></section>
+                <section id="decoder_box_2"></section>
+                <form action="../service_calculator/services.php" method="GET" id="myForm">
+                    <label>Num1:
+                        <input type="number" class="" name="num1">
+                    </label>
+                     <label>Num2:
+                        <input type="number" class="" name="num2">
+                    </label>
+                     <label>Num3:
+                        <input type="number" class="" name="num3">
+                    </label>
+                     <label >Num4:
+                        <input type="number" class="" name="num4">
+                    </label>
+                    <label>
+                    Choose Calculator:
+                        <select name="calc" id="calcDropBox" onchange="changeCalc()">
+                            <option value="sum" >sum</option>
+                            <option value="avg" >avg</option>
+                            <option value="mult">mult</option>
+                        </select>
+                    </label>
+                    <label>
+                    Choose Method:
+                        <select name="method" id="methodDropBox" onchange="changeMethod()">
+                            <option value="GET" >GET</option>
+                            <option value="POST">POST</option>
+                            <option value="PUT" >PUT</option>
+                        </select>
+                    </label>
+                    <label id="submit">
+                        <input type="submit" class="" name="submit" value="Send Request">
+                    </label>
+                     <label id="result">
+                        
+                    </label>
+                </form>
+            </section>
+        </div>
+        <script>
+            (function (){
+              $('#myForm').submit(function(event) { // catch the form's submit event
+                    event.preventDefault();
+                    $.ajax({ // create an AJAX call...
+                        data: $(this).serialize(), // get the form data
+                        type: $(this).attr('method'), // GET or POST
+                        url:  $(this).attr('action'), // the file to call
+                        success: function(response) { // on success..
+                             $('#result').empty();
+                             $('#result').append(response); // update the DIV
+                        }
+                   });
+                });
+            })();
+        </script>
+        <script>
+            function changeMethod() {
+                var selectBox = document.getElementById("methodDropBox");
+                var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+                $("#myForm").attr("method", selectedValue);
+                console.log(selectedValue);
+                
+            }
+
+            function changeCalc() {
+                var selectBox = document.getElementById("calcDropBox");
+                var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+                console.log(selectedValue);
+                
+            }
+        </script>
+    </body>
+</html>

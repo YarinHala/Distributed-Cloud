@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+a {
+    text-decoration: none;
+}
+
+header,footer,main,nav,section,side,main,article {
+    display: block;
+}
+
+
+#wrapper {
+    max-width: 1000px;
+    width:100%;
+    margin: 0px auto;
+    background-color: #999999;
+    border-radius: 7px;
+}
+
+h1{
+    width: 250px;
+    margin: 0px auto;
+    position: relative;
+    top:30px;
+    left: 15px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #fff;
+    font-size: 40px
+}
+
+#myForm{
+    width: 250px;
+    height: 400px;
+    padding: 50px;
+    background-color: #555555;
+    position: relative;
+    top: 50px;
+    margin: 0px auto;
+    border-radius: 5px;
+}
+
+#myForm label{
+    height: 35px;
+    display: block;
+    border-radius:10px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #fff;
+    margin-top: 10px;
+}
+
+#myForm label input{
+    position: relative;
+    left:15px;
+    height: 30px;
+}
+
+#myForm label select{
+    position: relative;
+    left:15px;
+}
+
+#myForm > label:nth-child(5){
+    margin-top: 50px;
+
+}
+
+#myForm > label:nth-child(6){
+    margin-top: 30px;
+}
+
+#myForm > label > select:nth-child(1){
+    position: relative;
+    left: 135px;
+    top:-40px;
+}
+
+#myForm select{
+    height: 30px;
+    width: 100px;
+    display: block;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+#submit{
+    width: 235px;
+    margin-top: 125px;
+    background-color: #fff;
+    border: none;
+    border-radius: 4px !important;
+
+}
+
+#submit input{
+    position: relative;
+    left:45px !important;
+    background-color: #fff;
+    border: none;
+    color:#000;
+    font-size: 25px;
+    font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+#result{
+    width: 235px;
+    margin-top: 125px;
+    background-color: #fff;
+    color:#000 !important;
+    border: none;
+    border-radius: 4px !important;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+    font-size: 25px;
+
+}
+
+#myForm select option{
+    font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+#decoder_box_1{
+    width:500px;
+    height: 300px;
+    position: absolute;
+    top: 330px;
+    left:250px;
+    background-color: #313131;
+    border-radius: 3px;
+}
+
+#decoder_box_2{
+    width:300px;
+    height: 200px;
+    position: absolute;
+    top: 60px;
+    left:790px;
+    background-color: #363636;
+    border-radius: 3px;
+}
